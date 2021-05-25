@@ -2,8 +2,6 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { ShoppingCart } from 'components/shopping-cart';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
@@ -28,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
   }
 `;
 

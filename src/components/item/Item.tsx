@@ -9,6 +9,9 @@ const ItemContainer = styled.div`
   justify-content: flex-start;
   padding: 10px 0;
   border-bottom: 1px dashed #dbdbdb;
+  &:nth-child(23) {
+    background-color: red;
+  }
 `;
 
 const LeftContentContainer = styled.div`
@@ -65,10 +68,10 @@ const Item: React.FC<IItemProps> = ({
   onQuantityChange
 }) => {
   const handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
-    const quantity =
-      parseFloat(e.currentTarget.value) < 0
-        ? 0
-        : parseFloat(e.currentTarget.value);
+    const quantity = isNaN(parseFloat(e.currentTarget.value))
+      ? 0
+      : parseFloat(e.currentTarget.value);
+
     onQuantityChange(product.id, quantity);
   };
 
@@ -79,7 +82,7 @@ const Item: React.FC<IItemProps> = ({
         <ItemInput
           onChange={handleInputChange}
           value={product.quantity}
-          type="number"
+          type="text"
           step={1}
           min={0}
           max={1000}
